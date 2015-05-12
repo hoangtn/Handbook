@@ -27,7 +27,7 @@ user@remote_host$ docker run -it -v $(pwd):/usr/data -w /usr/data -p 8889:8888 i
 ipython notebook --ip=0.0.0.0 --no-browser
 ```
 
-#### On local machine, start an SSH tunnel:
+#### On the local machine, start an SSH tunnel:
 
 ```{}
 ssh -i myKey.pem -N -f -L localhost:8882:localhost:8889 ubuntu@remote_host
