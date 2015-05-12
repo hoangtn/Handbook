@@ -35,5 +35,5 @@ ssh -i myKey.pem -N -f -L localhost:8882:localhost:8889 ubuntu@remote_host
 
 ```
 
-#### On the local machine, open the browser with the port 8882 (whichever you choose)
+#### On the local machine, open the browser with the port 8882 (the port you choose)
 
