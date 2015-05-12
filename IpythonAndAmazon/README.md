@@ -6,7 +6,7 @@
 user@remote_host$ ipython notebook --no-browser --port=8887
 ```
 
-#### On local machine, start an SSH tunnel:
+#### On the local machine, start an SSH tunnel:
 
 ```{}
 user@local_host$ ssh -N -f -L localhost:8888:localhost:8887 user@remote_host
@@ -15,7 +15,7 @@ user@local_host$ ssh -N -f -L localhost:8888:localhost:8887 user@remote_host
 
 ## 2. Run Ipython in a container (docker) on an AMAZON server (EC2)
 
-####  On the remote server (EC2), we assume that we have an image **ipython/scipystack**
+####  On the remote server (EC2), assuming that we have an image *ipython/scipystack*
 
 ```{}
 user@remote_host$ docker run -it -v $(pwd):/usr/data -w /usr/data -p 8889:8888 ipython/scipystack /bin/bash
