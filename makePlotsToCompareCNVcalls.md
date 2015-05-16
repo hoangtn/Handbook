@@ -56,7 +56,7 @@ bb <- read.table("Join.DEFB103.CNVrd2.PRT.cnmops.CNVnator.Peter.txt", row.names=
 ### Name columns
 nameAll <- c("CNVrd2", "PRT",  "cn.Mops", "CNVnator", "Sudmant, P. H. et al. (2010)")
 ```
-### Draw each comparison and then combine all into one figure
+### Draw each comparison and then combine all into one figure (The same as Figure 3 in the main paper CNVrd2 on: http://journal.frontiersin.org/article/10.3389/fgene.2014.00248/full)
 
 
 ```r
