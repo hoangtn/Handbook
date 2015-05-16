@@ -76,6 +76,8 @@ p1 <- plot.inter(x = bbTemp[, ii], y = bbTemp[, jj], xlab = nameAll[ii],
                  ylim = c(xy[1] - 0.3, xy[2] + 0.4),
                  main = paste("\n r = ", round(cor(bbTemp[, ii], bbTemp[, jj]), 2), sep = ""))
 
+### Note: it's more reasonable to use the Spearman method: cor(bbTemp[, ii], bbTemp[, jj], method = "spearman")
+
 ii = 3
 
 bbTemp <- bb
