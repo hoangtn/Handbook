@@ -1,7 +1,8 @@
 library("CNVrd2")
-objectCNVrd2 <- new("CNVrd2", windows = windows, chr = "chr5", st = 149500001,
-                    en = 150500000, dirBamFile = dirBamFile,
-                    genes = c(150203161, 150223264), geneNames = "IRGM")
+dirBamFile = "Bam/"
+objectCNVrd2 <- new("CNVrd2", windows = windows, chr = "chr1", st = 161100001,
+                    en = 162100000, dirBamFile = dirBamFile,
+                    genes = c(161592986, 161601753), geneNames = "FCGR3B")
 
 st <- objectCNVrd2@st
 en <- objectCNVrd2@en
@@ -9,10 +10,10 @@ chr <- objectCNVrd2@chr
 gene <- objectCNVrd2@genes
 
 cnOut <- pseudoPRTusingReadDepth(st = st, en = en, chr = chr, gene = gene,
-                                 Nposition = 10,
-                                 dirCoordinate = "../TestSRBreak/TempAll/")
+                                 Nposition = 50, nSample = 2000,
+                                 dirCoordinate = "TempAll/" )
 
-pseudoPRTusingReadDepth <- function(st, en, chr, gene, Nposition, dirCoordinate= "TempAll",
+pseudoPRTusingReadDepth <- function(st, en, chr, gene, Nposition, dirCoordinate= "TempAll", nSample = 100,
                                     referenceGenome = "BSgenome.Hsapiens.UCSC.hg19", smallGCdifference = 0.1){
 
     library(referenceGenome, character.only=TRUE)
@@ -35,19 +36,24 @@ pseudoPRTusingReadDepth <- function(st, en, chr, gene, Nposition, dirCoordinate=
     
     while (length(sequenceTheSameGC) < Nposition){
 
-        seqST <- sample(st:(en - (enGene - stGene + 1)), 1)
+        seqST <- sample(st:(en - (enGene - stGene + 1)), nSample)
         seqEN <- seqST + (enGene - stGene + 1)
 
-        tempG <- chrSequence[(seqST):seqEN]
+        listGC <- apply(data.frame(seqST, seqEN), 1, function(x){
+            tempG <- chrSequence[(x[1]):x[2]]
+            return(sum((alphabetFrequency(tempG))[2:3])/sum(alphabetFrequency(tempG)))
+            })
 
-        tempGCcontent <- 100*sum((alphabetFrequency(tempG))[2:3])/sum(alphabetFrequency(tempG))
-        if (abs(tempGCcontent - gcGene) <= smallGCdifference){
-            message("Add the position ", seqST, " with the GC-content = ", tempGCcontent)
-            names(tempGCcontent) <- seqST
-            sequenceTheSameGC <- c(sequenceTheSameGC, tempGCcontent)
+        names(listGC) <- seqST
+        listGC <- 100*listGC 
+
+        listGC1 <- listGC[abs(listGC - gcGene) <= smallGCdifference]
+
+        sequenceTheSameGC <- c(sequenceTheSameGC, listGC1)
+        message(length(sequenceTheSameGC), " positions have been chosen")
        } 
         
-    }
+    
 
 ########################################
     ####Obtain all positions having similar GC-content
