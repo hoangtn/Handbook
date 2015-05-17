@@ -44,7 +44,7 @@ write.table(finalPosG, "ThesameGCwithDEFB103A.txt", col.names = FALSE,
             row.names = FALSE, quote = FALSE)
 
 ##################Read files
-dirFile = "TempAllHollox"
+dirFile = "TempAllPublish"
 allFile <- dir(path = dirFile, pattern = "coordinate")
 
 
@@ -74,13 +74,13 @@ cnOut1 <- round(cnOut, 0)
 
 names(cnOut1) <- substr(allFile, 1, 7)
 
-write.table(cnOut1, "Hollox.CountMedianDEFA1A3_3.txt", quote = FALSE,
+write.table(cnOut1, "Publish.CountMedianDEFA1A3_3.txt", quote = FALSE,
             row.names = TRUE, col.names = FALSE)
 
-write.table(cnOut1, "Hollox.CountMedianDEFA1A3_2.txt", quote = FALSE,
+write.table(cnOut1, "Publish.CountMedianDEFA1A3_2.txt", quote = FALSE,
             row.names = TRUE, col.names = FALSE)
 
-write.table(cnOut1, "Hollox.CountMedianDEFA1A3_1.txt", quote = FALSE,
+write.table(cnOut1, "Publish.CountMedianDEFA1A3_1.txt", quote = FALSE,
             row.names = TRUE, col.names = FALSE)
 
 
@@ -137,7 +137,7 @@ write.table(finalPosG, "ThesameGCwithFCGR3A.txt", col.names = FALSE,
             row.names = FALSE, quote = FALSE)
 
 ##################Read files
-dirFile = "TempAllHollox"
+dirFile = "TempAllPublish"
 allFile <- dir(path = dirFile, pattern = "coordinate")
 
 
@@ -167,6 +167,6 @@ cnOut1 <- round(cnOut, 0)
 
 names(cnOut1) <- substr(allFile, 1, 7)
 
-write.table(cnOut1, "Hollox.CountMedianFCGR3A.txt", quote = FALSE,
+write.table(cnOut1, "Publish.CountMedianFCGR3A.txt", quote = FALSE,
             row.names = TRUE, col.names = FALSE)
 
