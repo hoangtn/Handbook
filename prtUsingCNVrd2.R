@@ -1,5 +1,7 @@
 library("CNVrd2")
 dirBamFile = "Bam/"
+
+windows = 500
 objectCNVrd2 <- new("CNVrd2", windows = windows, chr = "chr1", st = 161100001,
                     en = 162100000, dirBamFile = dirBamFile,
                     genes = c(161592986, 161601753), geneNames = "FCGR3B")
@@ -10,8 +12,10 @@ chr <- objectCNVrd2@chr
 gene <- objectCNVrd2@genes
 
 cnOut <- pseudoPRTusingReadDepth(st = st, en = en, chr = chr, gene = gene,
-                                 Nposition = 50, nSample = 2000,
+                                 Nposition = 1000, nSample = 10000,
                                  dirCoordinate = "TempAll/" )
+
+write.table(round(cnOut, 0), "ResultFCGR3BusingPseudoPRT.txt", quote = FALSE)
 
 pseudoPRTusingReadDepth <- function(st, en, chr, gene, Nposition, dirCoordinate= "TempAll", nSample = 100,
                                     referenceGenome = "BSgenome.Hsapiens.UCSC.hg19", smallGCdifference = 0.1){
@@ -39,10 +43,13 @@ pseudoPRTusingReadDepth <- function(st, en, chr, gene, Nposition, dirCoordinate=
         seqST <- sample(st:(en - (enGene - stGene + 1)), nSample)
         seqEN <- seqST + (enGene - stGene + 1)
 
-        listGC <- apply(data.frame(seqST, seqEN), 1, function(x){
-            tempG <- chrSequence[(x[1]):x[2]]
-            return(sum((alphabetFrequency(tempG))[2:3])/sum(alphabetFrequency(tempG)))
-            })
+
+        gcSegment <- Views(chrSequence, seqST, seqEN)
+       
+       gcContentInSegment <- apply(letterFrequency(gcSegment, letters = c("G", "C")), 1, sum)
+       gcContentInSegment <- ifelse(is.na(gcContentInSegment), 0, gcContentInSegment)
+
+        listGC <- gcContentInSegment/(enGene - stGene + 1)
 
         names(listGC) <- seqST
         listGC <- 100*listGC 
