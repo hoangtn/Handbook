@@ -10,7 +10,7 @@ http://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
 
 ##Move files between two locations
 
-*aws s3 mv POS1 POS1
+*aws s3 mv POS1 POS1*
 
 http://docs.aws.amazon.com/cli/latest/reference/s3/mv.html
 
