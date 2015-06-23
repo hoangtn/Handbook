@@ -2,13 +2,13 @@
 
 *aws s3 ls*
 
-##Copy files between two locations
+##Copy files to another location
 
 *aws s3 cp POS1 POS2*
 
 http://docs.aws.amazon.com/cli/latest/reference/s3/cp.html
 
-##Move files between two locations
+##Move files to another location
 
 *aws s3 mv POS1 POS1*
 
