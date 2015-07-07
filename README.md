@@ -6,3 +6,6 @@ To produce plots that compare CN calls, please read [makePlotsToCompareCNVcalls.
 High performance computing references: [HighPerformanceComputingInformation.md](./HighPerformanceComputingInformation.md)
 
 Mendelian Randomization stuff: [DoingMedelianRandomization.ipynb](./DoingMedelianRandomization.ipynb)
+
+
+UCSC tools: http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/
