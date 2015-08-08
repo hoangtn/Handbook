@@ -5,6 +5,8 @@ To produce plots that compare CN calls, please read [makePlotsToCompareCNVcalls.
 
 High performance computing references: [HighPerformanceComputingInformation.md](./HighPerformanceComputingInformation.md)
 
+Docker cheat sheet: [DockerCheatSheet.md](./DockerCheatSheet.md)
+
 Mendelian Randomization stuff: [DoingMedelianRandomization.ipynb](./DoingMedelianRandomization.ipynb)
 
 
