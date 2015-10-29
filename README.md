@@ -13,3 +13,5 @@ Mendelian Randomization stuff: [DoingMedelianRandomization.ipynb](./DoingMedelia
 Produce beautiful venn diagrams: [http://rstudio-pubs-static.s3.amazonaws.com/13301_6641d73cfac741a59c0a851feb99e98b.html](http://rstudio-pubs-static.s3.amazonaws.com/13301_6641d73cfac741a59c0a851feb99e98b.html)
 
 UCSC tools: http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/
+
+Bayesian stuff: [BayesianStat](./BayesianStat)
