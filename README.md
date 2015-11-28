@@ -15,3 +15,5 @@ Produce beautiful venn diagrams: [http://rstudio-pubs-static.s3.amazonaws.com/13
 UCSC tools: http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/
 
 Bayesian stuff: [BayesianStat](./BayesianStat)
+
+Emacs key combinations: [http://www.math.uh.edu/~bgb/emacs_keys.html](http://www.math.uh.edu/~bgb/emacs_keys.html)
