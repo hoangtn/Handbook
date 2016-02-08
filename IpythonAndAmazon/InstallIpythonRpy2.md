@@ -1,3 +1,31 @@
+# This describes two ways to install notebook tools
+
+## Jupyter
+
+ Step 1: Install anacoda from [https://www.continuum.io/downloads](https://www.continuum.io/downloads)
+ 
+ Step 2: Install r essentials 
+ 
+ *conda install -c r r-essentials*
+ 
+ Step 3: Install some useful packages to run R
+ 
+ In R
+  install.packages(c('rzmq','repr','IRkernel','IRdisplay'),
+                  
+                  repos = c('http://irkernel.github.io/', getOption('repos')),
+                  
+                  type = 'source')
+                  
+  
+  For Mac computer, if there are errors with the installation of the IRkernel package then one way to resolve is:
+  
+  *brew install czmq zmq*
+                  
+
+## Ipython
+
+
 You can use a dockerized version by typing:
 
 *docker pull hoangtn/notebooktools* (https://hub.docker.com/r/hoangtn/notebooktools/)
