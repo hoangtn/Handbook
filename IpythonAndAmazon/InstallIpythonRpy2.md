@@ -22,6 +22,11 @@
   For Mac computer, if there are errors with the installation of the IRkernel package then one way to resolve is:
   
       brew install czmq zmq
+
+## Install the rpy2 package to call R from python
+
+sudo pip install --upgrade rpy2
+
                   
 
 ## Ipython
