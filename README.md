@@ -22,3 +22,7 @@ Bayesian stuff: [BayesianStat](./BayesianStat)
 
 
 2. Org mode: [https://github.com/vikasrawal/orgpaper/blob/master/orgpapers.org](https://github.com/vikasrawal/orgpaper/blob/master/orgpapers.org)
+
+## SQL for UCSC
+
+http://genomewiki.ucsc.edu/index.php/Gene_id_conversion
