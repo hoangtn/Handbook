@@ -16,6 +16,10 @@ UCSC tools: http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/
 
 Bayesian stuff: [BayesianStat](./BayesianStat)
 
+## Latex
+
+[LatexCheatSheet.md](./LatexCheatSheet.md)
+
 ## Emacs
 
 1. Emacs key combinations: [http://www.math.uh.edu/~bgb/emacs_keys.html](http://www.math.uh.edu/~bgb/emacs_keys.html)
