@@ -1,12 +1,12 @@
 # Latex for Mac
 
-Install:
+Installation:
 
 *brew cask install basictex*
 
-Check:
+Checking:
 
-* which pdflatex *
+*which pdflatex*
 
 Source: https://tex.stackexchange.com/questions/307483/setting-up-basictex-homebrew
 
